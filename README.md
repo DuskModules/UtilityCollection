@@ -5,7 +5,7 @@ This, and other Utility modules, are critical for the DuskModules framework, a l
 
 Aside from that, I hope that these modules can benefit others as it has helped me with my work every day.
 
-> When using this module, make sure to **Star** this repository. I would appreciate it if you gave credits to **Eric van Gastel** somewhere in your product, but I won't hold it against you if you don't. That said; **these modules are not allowed to be sold anywhere!**
+> When using this module, make sure to **Star** this repository. I would appreciate it if you gave credits to **Eric van Gastel** somewhere in your product, but I won't hold it against you if you don't. That said; **this module is not allowed to be sold anywhere!**
 
 ### Contents
 These are the available modules in the UtilityCollection:
