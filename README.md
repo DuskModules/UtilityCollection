@@ -1,5 +1,5 @@
 # UtilityCollection
-Utility Collection is a module containing many individual scripts of different categories, which aren't substantional enough to be put in their own module. Anything that doesn't provide a feature big enough to warrant a whole new module is dropped in here. It's the lowest end of the DuskModules framework. Everything else is built on top of this.
+UtilityCollection is a module containing many individual scripts of different categories, which aren't substantional enough to be put in their own module. Anything that doesn't provide a feature big enough to warrant a whole new module is dropped in here. It's the lowest end of the DuskModules framework. Everything else is built on top of this.
 
 This, and other Utility modules, are critical for the DuskModules framework, a large modular framework providing a lot of features for faster and more powerful game development. Most bigger modules have a dependency on several utility modules, sharing a common code base for better integration with one another.
 
