@@ -34,7 +34,7 @@ You can download and import the **UtilityCollection.unitypackage** into your Uni
 Or you can go to the UtilityCollection Asset Store page and download it from there. (TODO: Add AssetStore page)
 
 ## Demo & Documentation
-There is an unity package available called **DemoPackages.unitypackage**. Import the contents if you want to check out the demo scenes and examples of the module functionality. You can always delete the demo folders without causing conflicts or errors.
+There is an unity package available in the module folder called **DemoPackages.unitypackage**. Import the contents if you want to check out the demo scenes and examples of the module functionality. You can always delete the demo folders without causing conflicts or errors.
 
 For more details on how to use the module, and what features it provides, check out the DuskModules website:
 https://sites.google.com/dusklightstudios.com/duskmodules/utility-modules/utility-collection
