@@ -17,21 +17,26 @@ These are the available modules in the UtilityCollection:
 You should really check out the documentation website for the full feature list, though.
 
 ## Installation
-Before installing these modules, you should prepare a few project settings within Unity to accommodate the new files. As a side effect, this will make it easier for you to use Github for your Unity project.
+There are two ways to install it, depending on your personal preference. By importing the Unity Package, or adding the Github Submodule.
+
+### Unity Package
+If you want to add the module by importing an UnityPackage, you can get the package from two sources:
+
+You can simply download and import the **UtilityCollection.unitypackage** into your Unity Project manually. (TODO: Add package release branch)
+
+Or you can go to the UtilityCollection Asset Store page and download it from there. (TODO: Add AssetStore page)
+
+### Github Submodule
+You can setup a submodule in your repository, making it easier to stay updated with the latest version.
+
+Before adding the submodule, you should prepare a few project settings within Unity to accommodate the new files. As a side effect, this will make it safer for you to use Github for your Unity project.
 
 Go to *Edit/Project Settings*, then to the *Editor* tab. Swap *Version Control Mode* to *Visible Meta Files*, and *Asset Serialization* to *Force Text*. This will ensure all objects and references are pushed in a safe way, avoiding complicated conflicts in prefabs and scenes or loss of asset references.
 
-### Import
-There are three ways to install it, depending on your personal preference.
-
-You can setup a submodule in your repository, making it easier to stay updated with the latest version:
+Use the command line below to install the submodule into your github project.
 ```
 $ git submodule add https://github.com/DuskModules/UtilityCollection Assets/DuskModules/1-UtilityModules/UtilityCollection
 ```
-
-You can download and import the **UtilityCollection.unitypackage** into your Unity Project. (TODO: Add package release branch)
-
-Or you can go to the UtilityCollection Asset Store page and download it from there. (TODO: Add AssetStore page)
 
 ## Demo & Documentation
 There is an unity package available in the module folder called **DemoPackages.unitypackage**. Import the contents if you want to check out the demo scenes and examples of the module functionality. You can always delete the demo folders without causing conflicts or errors.
