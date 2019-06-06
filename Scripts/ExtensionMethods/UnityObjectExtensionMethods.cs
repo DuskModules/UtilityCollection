@@ -93,7 +93,7 @@ public static class UnityObjectExtensionMethods {
   public static float GetDeltaTime(this Behaviour behaviour, TimeType timeType) {
     switch (timeType) {
       case TimeType.deltaTime: return Time.deltaTime;
-      case TimeType.unscaledDeltaTime: return Time.unscaledDeltaTime;
+      case TimeType.unscaledDeltaTime: return DuskUtility.interfaceDeltaTime;
     }
     return Time.deltaTime;
   }

@@ -19,6 +19,9 @@ namespace DuskModules {
     [Tooltip("Speed with which to move the smooth value")]
     public LerpMoveValue speed;
 
+		/// <summary> Whether the value has reached the target </summary>
+		public bool atTarget => value == valueTarget;
+
     /// <summary> Updating of value </summary>
     /// <param name="time"> How much time has passed in seconds </param>
     public virtual void Update(float time = -1) {
@@ -32,6 +35,7 @@ namespace DuskModules {
 
 		/// <summary> Setup the smooth value </summary>
 		public SmoothValue(float value, LerpMoveValue speed) {
+			useConstant = false;
 			this.value = value;
 			valueTarget = value;
 			this.speed = speed;

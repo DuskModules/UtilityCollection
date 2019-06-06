@@ -19,11 +19,11 @@ namespace DuskModules {
     /// <summary> Whether to loop the timer </summary>
     private bool loop = false;
 
-    /// <summary> Running time for timer </summary>
-    private float timer;
+		/// <summary> Running time for timer </summary>
+		public float timer { get; private set; }
 
-    /// <summary> Get 0 - 1 variant of running timer </summary>
-    public float percent => timer / time;
+		/// <summary> Get 0 - 1 variant of running timer </summary>
+		public float percent => timer / time;
     /// <summary> Whether this timer is running or not </summary>
     public bool isRunning => timer > 0;
 
