@@ -46,14 +46,24 @@ namespace DuskModules {
 		
 		/// <summary> Static method to combine multiple colors together. </summary>
 		public static Color Combine(Color baseColor, params ColorSetting[] colors) {
-			float a = baseColor.a;
+			float a = 0;
+			Color addColor = Color.black.WithA(0);
+			float maxColorFill = 0;
+			float maxAlphaFill = 0;
+			
 			for (int i = 0; i < colors.Length; i++) {
-				if (colors[i].colorUse == ColorUse.full || colors[i].colorUse == ColorUse.colorOnly)
-					baseColor += colors[i].color * colors[i].fill.value;
-				if (colors[i].colorUse == ColorUse.full || colors[i].colorUse == ColorUse.alphaOnly)
+				if (colors[i].colorUse == ColorUse.full || colors[i].colorUse == ColorUse.colorOnly) {
+					addColor += colors[i].color * colors[i].fill.value;
+					if (colors[i].fill.value > maxColorFill) maxColorFill = colors[i].fill.value;
+				}
+				if (colors[i].colorUse == ColorUse.full || colors[i].colorUse == ColorUse.alphaOnly) {
 					a += colors[i].color.a * colors[i].fill.value;
+					if (colors[i].fill.value > maxAlphaFill) maxAlphaFill = colors[i].fill.value;
+				}
 			}
-			return baseColor.WithA(a);
+			addColor += baseColor * (1 - maxColorFill);
+			a += baseColor.a * (1 - maxAlphaFill);
+			return addColor.WithA(a);
 		}
 	}
 	

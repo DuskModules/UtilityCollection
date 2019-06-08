@@ -21,18 +21,7 @@ namespace DuskModules {
 
 		/// <summary> Whether the value has reached the target </summary>
 		public bool atTarget => value == valueTarget;
-
-		/// <summary> Basic constructor </summary>
-		public SmoothVector2() { }
-
-		/// <summary> Setup the smooth value </summary>
-		public SmoothVector2(Vector2 value, LerpMoveValue speed) {
-			useConstant = false;
-			this.value = value;
-			valueTarget = value;
-			this.speed = speed;
-		}
-
+		
 		/// <summary> Updating of value </summary>
 		/// <param name="time"> How much time has passed in seconds </param>
 		public virtual void Update(float time = -1) {
