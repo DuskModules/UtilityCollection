@@ -228,6 +228,18 @@ namespace DuskModules {
       }
       return scripts;
     }
+
+		/// <summary> Finds all assets of a certain type. </summary>
+		public static List<T> FindAssets<T>() where T : UnityEngine.Object {
+			string[] guid = AssetDatabase.FindAssets("t:" + typeof(T).Name);
+			List<T> objects = new List<T>();
+
+			for (int i = 0; i < guid.Length; i++) {
+				string path = AssetDatabase.GUIDToAssetPath(guid[i]);
+				objects.Add(AssetDatabase.LoadAssetAtPath<T>(path));
+			}
+			return objects;
+		}
     
     /// <summary> Converts the given name to an editor friendly name. </summary>
     public static string EditorFriendlyName(string name) {

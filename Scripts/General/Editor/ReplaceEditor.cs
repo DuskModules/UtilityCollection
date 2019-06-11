@@ -18,7 +18,7 @@ namespace DuskModules.DuskEditor {
 		private SerializedProperty replaceProp;
 		private SerializedProperty prefabProp;
 
-		[MenuItem("DuskModules/Utility/ReplaceObjects")]
+		[MenuItem("DuskModules/Tools/ReplaceObjects")]
 		public static void OpenWindow() {
 			ReplaceEditor replaceEditor = (ReplaceEditor)GetWindow(typeof(ReplaceEditor), false, "Replace Objects", true);
 		}
