@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System.Reflection;
+﻿using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
@@ -44,4 +43,3 @@ namespace DuskModules.DuskEditor {
 		}
 	}
 }
-#endif

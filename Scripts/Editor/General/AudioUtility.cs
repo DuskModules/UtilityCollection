@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace UnityEditor {
 
 	public static class AudioUtility {
 
-		public static void PlayClip(AudioClip clip , int startSample , bool loop) {
+		public static void PlayClip(AudioClip clip, int startSample, bool loop) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
@@ -32,7 +31,7 @@ namespace UnityEditor {
 			);
 		}
 
-		public static void PlayClip(AudioClip clip , int startSample) {
+		public static void PlayClip(AudioClip clip, int startSample) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
@@ -73,7 +72,7 @@ namespace UnityEditor {
 			}
 			);
 		}
-		
+
 		public static void StopClip(AudioClip clip) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
@@ -93,7 +92,7 @@ namespace UnityEditor {
 			}
 			);
 		}
-		
+
 		public static void PauseClip(AudioClip clip) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
@@ -113,7 +112,7 @@ namespace UnityEditor {
 			}
 			);
 		}
-		
+
 		public static void ResumeClip(AudioClip clip) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
@@ -134,7 +133,7 @@ namespace UnityEditor {
 			);
 		}
 
-		public static void LoopClip(AudioClip clip , bool on) {
+		public static void LoopClip(AudioClip clip, bool on) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
@@ -163,18 +162,18 @@ namespace UnityEditor {
 				"IsClipPlaying",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool playing = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip,
 			}
 			);
-			
+
 			return playing;
 		}
 
-		public static void StopAllClips () {
+		public static void StopAllClips() {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
@@ -187,7 +186,7 @@ namespace UnityEditor {
 				null
 				);
 		}
-		
+
 		public static float GetClipPosition(AudioClip clip) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
@@ -195,14 +194,14 @@ namespace UnityEditor {
 				"GetClipPosition",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			float position = (float)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return position;
 		}
 
@@ -213,25 +212,25 @@ namespace UnityEditor {
 				"GetClipSamplePosition",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int position = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return position;
 		}
 
-		public static void SetClipSamplePosition(AudioClip clip , int iSamplePosition) {
+		public static void SetClipSamplePosition(AudioClip clip, int iSamplePosition) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"SetClipSamplePosition",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			method.Invoke(
 				null,
 				new object[] {
@@ -248,14 +247,14 @@ namespace UnityEditor {
 				"GetSampleCount",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int samples = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return samples;
 		}
 
@@ -266,14 +265,14 @@ namespace UnityEditor {
 				"GetChannelCount",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int channels = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return channels;
 		}
 
@@ -284,14 +283,14 @@ namespace UnityEditor {
 				"GetChannelCount",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int bitRate = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return bitRate;
 		}
 
@@ -302,14 +301,14 @@ namespace UnityEditor {
 				"GetBitsPerSample",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int bits = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return bits;
 		}
 
@@ -320,14 +319,14 @@ namespace UnityEditor {
 				"GetFrequency",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int frequency = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return frequency;
 		}
 
@@ -338,28 +337,28 @@ namespace UnityEditor {
 				"GetSoundSize",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int size = (int)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return size;
 		}
 
-		public static Texture2D GetWaveForm(AudioClip clip , int channel , float width , float height) {
+		public static Texture2D GetWaveForm(AudioClip clip, int channel, float width, float height) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"GetWaveForm",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			string path = AssetDatabase.GetAssetPath(clip);
 			AudioImporter importer = (AudioImporter)AssetImporter.GetAtPath(path);
-			
+
 			Texture2D texture = (Texture2D)method.Invoke(
 				null,
 				new object[] {
@@ -370,18 +369,18 @@ namespace UnityEditor {
 				height
 			}
 			);
-			
+
 			return texture;
 		}
 
-		public static Texture2D GetWaveFormFast(AudioClip clip , int channel , int fromSample , int toSample, float width , float height) {
+		public static Texture2D GetWaveFormFast(AudioClip clip, int channel, int fromSample, int toSample, float width, float height) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"GetWaveFormFast",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			Texture2D texture = (Texture2D)method.Invoke(
 				null,
 				new object[] {
@@ -393,7 +392,7 @@ namespace UnityEditor {
 				height
 			}
 			);
-			
+
 			return texture;
 		}
 
@@ -404,7 +403,7 @@ namespace UnityEditor {
 				"ClearWaveForm",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			method.Invoke(
 				null,
 				new object[] {
@@ -420,14 +419,14 @@ namespace UnityEditor {
 				"GetSoundSize",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool hasPreview = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return hasPreview;
 		}
 
@@ -438,14 +437,14 @@ namespace UnityEditor {
 				"IsCompressed",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool isCompressed = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return isCompressed;
 		}
 
@@ -456,14 +455,14 @@ namespace UnityEditor {
 				"IsStramed",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool isStreamed = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return isStreamed;
 		}
 
@@ -474,14 +473,14 @@ namespace UnityEditor {
 				"GetDuration",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			double duration = (double)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return duration;
 		}
 
@@ -492,12 +491,12 @@ namespace UnityEditor {
 				"GetFMODMemoryAllocated",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int memoryAllocated = (int)method.Invoke(
 				null,
 				null
 			);
-			
+
 			return memoryAllocated;
 		}
 
@@ -508,12 +507,12 @@ namespace UnityEditor {
 				"GetFMODCPUUsage",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			float cpuUsage = (float)method.Invoke(
 				null,
 				null
 				);
-			
+
 			return cpuUsage;
 		}
 
@@ -524,14 +523,14 @@ namespace UnityEditor {
 				"Is3D",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool is3D = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return is3D;
 		}
 
@@ -542,14 +541,14 @@ namespace UnityEditor {
 				"IsMovieAudio",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool isMovieAudio = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return isMovieAudio;
 		}
 
@@ -560,14 +559,14 @@ namespace UnityEditor {
 				"IsMOD",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool isMOD = (bool)method.Invoke(
 				null,
 				new object[] {
 				clip
 			}
 			);
-			
+
 			return isMOD;
 		}
 
@@ -578,12 +577,12 @@ namespace UnityEditor {
 				"GetMODChannelCount",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int channels = (int)method.Invoke(
 				null,
 				null
 			);
-			
+
 			return channels;
 		}
 
@@ -594,14 +593,14 @@ namespace UnityEditor {
 				"GetLowpassCurve",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			AnimationCurve curve = (AnimationCurve)method.Invoke(
 				null,
 				new object[] {
 				lowPassFilter
 			}
 			);
-			
+
 			return curve;
 		}
 
@@ -612,12 +611,12 @@ namespace UnityEditor {
 				"GetListenerPos",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			Vector3 position = (Vector3)method.Invoke(
 				null,
 				null
 			);
-			
+
 			return position;
 		}
 
@@ -628,7 +627,7 @@ namespace UnityEditor {
 				"UpdateAudio",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			method.Invoke(
 				null,
 				null
@@ -642,7 +641,7 @@ namespace UnityEditor {
 				"SetListenerTransform",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			method.Invoke(
 				null,
 				new object[] {
@@ -658,7 +657,7 @@ namespace UnityEditor {
 				"GetClipType",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			AudioType type = (AudioType)method.Invoke(
 				null,
 				new object[] {
@@ -669,14 +668,14 @@ namespace UnityEditor {
 			return type;
 		}
 
-		public static AudioType GetPlatformConversionType(AudioType inType , BuildTargetGroup targetGroup , AudioCompressionFormat format) {
+		public static AudioType GetPlatformConversionType(AudioType inType, BuildTargetGroup targetGroup, AudioCompressionFormat format) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"GetPlatformConversionType",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			AudioType type = (AudioType)method.Invoke(
 				null,
 				new object[] {
@@ -685,7 +684,7 @@ namespace UnityEditor {
 				format
 			}
 			);
-			
+
 			return type;
 		}
 
@@ -696,14 +695,14 @@ namespace UnityEditor {
 				"HaveAudioCallback",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			bool hasCallback = (bool)method.Invoke(
 				null,
 				new object[] {
 				behaviour
 			}
 			);
-			
+
 			return hasCallback;
 		}
 
@@ -714,14 +713,14 @@ namespace UnityEditor {
 				"GetCustomFilterChannelCount",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int channels = (int)method.Invoke(
 				null,
 				new object[] {
 				behaviour
 			}
 			);
-			
+
 			return channels;
 		}
 
@@ -732,25 +731,25 @@ namespace UnityEditor {
 				"GetCustomFilterProcessTime",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			int processTime = (int)method.Invoke(
 				null,
 				new object[] {
 				behaviour
 			}
 			);
-			
+
 			return processTime;
 		}
 
-		public static float GetCustomFilterMaxIn(MonoBehaviour behaviour , int channel) {
+		public static float GetCustomFilterMaxIn(MonoBehaviour behaviour, int channel) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"GetCustomFilterMaxIn",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			float maxIn = (float)method.Invoke(
 				null,
 				new object[] {
@@ -758,18 +757,18 @@ namespace UnityEditor {
 				channel
 			}
 			);
-			
+
 			return maxIn;
 		}
 
-		public static float GetCustomFilterMaxOut(MonoBehaviour behaviour , int channel) {
+		public static float GetCustomFilterMaxOut(MonoBehaviour behaviour, int channel) {
 			Assembly unityEditorAssembly = typeof(AudioImporter).Assembly;
 			Type audioUtilClass = unityEditorAssembly.GetType("UnityEditor.AudioUtil");
 			MethodInfo method = audioUtilClass.GetMethod(
 				"GetCustomFilterMaxOut",
 				BindingFlags.Static | BindingFlags.Public
 				);
-			
+
 			float maxOut = (float)method.Invoke(
 				null,
 				new object[] {
@@ -777,9 +776,8 @@ namespace UnityEditor {
 				channel
 			}
 			);
-			
+
 			return maxOut;
 		}
 	}
 }
-#endif

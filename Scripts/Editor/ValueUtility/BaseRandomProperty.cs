@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace DuskModules.DuskEditor {
@@ -27,4 +26,3 @@ namespace DuskModules.DuskEditor {
     }
   }
 }
-#endif

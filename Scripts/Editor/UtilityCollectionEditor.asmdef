@@ -1,0 +1,17 @@
+{
+    "name": "UtilityCollectionEditor",
+    "references": [
+        "GUID:a68e828c54796ff48abcbdaa15698420"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

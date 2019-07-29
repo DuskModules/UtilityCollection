@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 // Never an end-point, and thus not in Editor namespace. Can be used by other modules.
@@ -58,4 +57,3 @@ namespace DuskModules {
     }
   }
 }
-#endif
