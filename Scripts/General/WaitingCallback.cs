@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace DuskModules {
 
@@ -7,15 +8,24 @@ namespace DuskModules {
 
 		public Action callback;
 
-		private int waitCount;
-		private bool waitSet;
-		private int hitCount;
-		private bool done;
+		public int waitCount { get; private set; }
+		public bool waitSet { get; private set; }
+		public int hitCount { get; private set; }
+		public bool done { get; private set; }
 
 		/// <summary> Creates the callback. </summary>
 		public WaitingCallback(Action callback) {
 			this.callback = callback;
 			done = false;
+		}
+
+		/// <summary> Resets the waiting callback </summary>
+		public void Reset(Action callback) {
+			this.callback = callback;
+			done = false;
+			waitSet = false;
+			waitCount = 0;
+			hitCount = 0;
 		}
 
 		/// <summary> Sets the count it waits for. Returns whether completed. </summary>
