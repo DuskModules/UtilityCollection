@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c511b357030b347b0d657b55dee79e, type: 3}
   m_Name: UtilityCollectionInfo
   m_EditorClassIdentifier: 
-  _buildIndex: 1
+  _version:
+    major: 1
+    minor: 0
+    patch: 0
   _dependencies: []
