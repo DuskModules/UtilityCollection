@@ -104,6 +104,10 @@ namespace DuskModules {
       valueTarget = target.valueTarget;
       value = target.value;
       speed = target.speed;
+			hasMaximumLimit = target.hasMaximumLimit;
+			maximumLimit = target.maximumLimit;
+			hasMinimumLimit = target.hasMinimumLimit;
+			minimumLimit = target.minimumLimit;
     }
   }
 }
